@@ -1,0 +1,117 @@
+/* Reset default styles for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation bar styles */
+.navbar {
+  min-height: 70px; /* Set minimum height */
+  position: fixed; /* Fixed position at the top of the viewport */
+  width: 100%; /* Take full width of the viewport */
+  background-color: rgba(30, 43, 74, 0.896); /* Background color with alpha */
+  justify-content: space-between; /* Align items along the main axis with space between them */
+  align-items: center; /* Align items along the cross axis at the center */
+  display: flex; /* Use flexbox layout */
+  padding: 0 24px; /* Add padding horizontally */
+}
+
+/* Navigation menu styles */
+.nav-menu {
+  display: flex; /* Use flexbox layout */
+  list-style: none; /* Remove default list styles */
+  justify-content: space-between; /* Align items along the main axis with space between them */
+  align-items: center; /* Align items along the cross axis at the center */
+  margin-right: 10px; /* Add margin on the right side */
+  gap: 30px; /* Add gap between items */
+}
+
+/* Navigation link styles */
+.nav-link {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color */
+  transition: 0.3s ease; /* Add transition effect */
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+  color: aqua; /* Change text color on hover */
+}
+
+/* Logo styles */
+.logo a {
+  font-size: 2rem; /* Set font size */
+  cursor: pointer; /* Show pointer cursor */
+  margin-left: 20px; /* Add margin on the left side */
+  text-decoration: none; /* Remove underline */
+  color: aqua; /* Set text color */
+}
+
+/* Hamburger icon styles */
+.hamburger {
+  display: none; /* Initially hide the hamburger icon */
+  cursor: pointer; /* Show pointer cursor */
+}
+
+/* Styles for bars in hamburger icon */
+.bar {
+  display: block; /* Display as block element */
+  width: 25px; /* Set width */
+  height: 3px; /* Set height */
+  margin: 5px auto; /* Add margin */
+  -webkit-transition: all 0.3s ease-in-out; /* Add transition for WebKit browsers */
+  transition: all 0.3s ease-in-out; /* Add transition */
+  color: white; /* Set color */
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100%; /* Adjust width for smaller screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+
+  /* Adjust hamburger bar styles */
+  .bar {
+    background-color: white; /* Change color */
+  }
+
+  /* Animation for hamburger bars when active */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Rotate top bar */
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Rotate bottom bar */
+  }
+
+  /* Menu styles for smaller screens */
+  .nav-menu {
+    position: fixed; /* Fixed position */
+    left: -100%; /* Hide menu off the screen */
+    top: 70px; /* Adjust top position */
+    gap: 0; /* Remove gap between items */
+    flex-direction: column; /* Align items vertically */
+    background-color: rgba(30, 43, 74, 0.896); /* Background color with alpha */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center-align text */
+    transition: 0.3s; /* Add transition effect */
+  }
+
+  .nav-item {
+    margin: 16px 0; /* Add margin to menu items */
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0; /* Display menu */
+  }
+}
